@@ -67,7 +67,7 @@
   /* #define STM32F10X_LD_VL */  /*!< STM32F10X_LD_VL: STM32 Low density Value Line devices */  
   /* #define STM32F10X_MD */     /*!< STM32F10X_MD: STM32 Medium density devices */
   /* #define STM32F10X_MD_VL */  /*!< STM32F10X_MD_VL: STM32 Medium density Value Line devices */  
-#define STM32F10X_HD     /*!< STM32F10X_HD: STM32 High density devices */
+#define STM32F10X_HD     /*!< STM32F10X_HD: STM32 High density devices 修改by zhp*/
   /* #define STM32F10X_HD_VL */  /*!< STM32F10X_HD_VL: STM32 High density value line devices */  
   /* #define STM32F10X_XL */     /*!< STM32F10X_XL: STM32 XL-density devices */
   /* #define STM32F10X_CL */     /*!< STM32F10X_CL: STM32 Connectivity line devices */
@@ -469,7 +469,7 @@ typedef enum IRQn
   CAN2_SCE_IRQn               = 66,     /*!< CAN2 SCE Interrupt                                   */
   OTG_FS_IRQn                 = 67      /*!< USB OTG FS global Interrupt                          */
 #endif /* STM32F10X_CL */     
-} IRQn_Type;
+} IRQn_Type;	//此处IRQn_Type为enum IRQn的别名
 
 /**
   * @}

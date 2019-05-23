@@ -110,7 +110,7 @@ void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
   * @retval None
   */
 void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
-{
+ {
   uint32_t tmppriority = 0x00, tmppre = 0x00, tmpsub = 0x0F;
   
   /* Check the parameters */
@@ -199,7 +199,7 @@ void NVIC_SystemLPConfig(uint8_t LowPowerMode, FunctionalState NewState)
 void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
 {
   /* Check the parameters */
-  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));//外部Div8:1111 1011;内部use core clock:0000 0100。只是修改SysTick->CTRL的bit2,其它位不变
+  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));//外部Div8:1011，将bit2清0;内部use core clock:0100，将bit2置1。只是修改SysTick->CTRL的bit2,其它位不变
   if (SysTick_CLKSource == SysTick_CLKSource_HCLK)
   {
     SysTick->CTRL |= SysTick_CLKSource_HCLK;

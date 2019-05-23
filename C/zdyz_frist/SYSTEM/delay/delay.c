@@ -127,11 +127,11 @@ void SysTick_Handler(void)
 //SYSCLK:系统时钟
 void delay_init()
 {
-#if SYSTEM_SUPPORT_OS  							//如果需要支持OS.
+ #if SYSTEM_SUPPORT_OS  							//如果需要支持OS.
 	u32 reload;
 #endif
 	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	//选择外部时钟  HCLK/8
-	fac_us=SystemCoreClock/8000000;				//为系统时钟的1/8  
+	fac_us=SystemCoreClock/8000000;				//9M时钟计数9次为1us  
 #if SYSTEM_SUPPORT_OS  							//如果需要支持OS.
 	reload=SystemCoreClock/8000000;				//每秒钟的计数次数 单位为M  
 	reload*=1000000/delay_ostickspersec;		//根据delay_ostickspersec设定溢出时间
